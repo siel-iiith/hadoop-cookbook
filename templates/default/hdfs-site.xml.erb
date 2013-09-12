@@ -31,16 +31,6 @@
   <description></description>
   </property>
 
-  <!--property>
-    <name>dfs.datanode.address</name>
-    <value>${HADOOP_DN_ADDR}</value>
-  </property>
-
-  <property>
-    <name>dfs.datanode.http.address</name>
-    <value>${HADOOP_DN_HTTP_ADDR}</value>
-  </property-->
-
   <property>
     <name>dfs.http.address</name>
     <value><%= node['hadoop']['namenode'] %>:50070</value>
@@ -48,6 +38,11 @@
        literal string "local" or a host:port for NDFS.
     </description>
     <final>true</final>
+  </property>
+
+  <property>
+    <name>dfs.permissions.supergroup</name>
+    <value><%= node['hadoop']['group'] %></value>
   </property>
 
 </configuration>
