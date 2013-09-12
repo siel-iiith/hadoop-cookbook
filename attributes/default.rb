@@ -37,8 +37,11 @@ default['hadoop']['namenode_dir'] = '/mnt/dfs/nn'
 # Hadoop Datanode directory
 default['hadoop']['datanode_dir'] = '/mnt/dfs/dn'
 
-# Hadoop Tasktracker directory
-default['hadoop']['tasktracker_local_dir'] = '/mnt/mapred/tt'
+# Hadoop Mapred Local directory
+default['hadoop']['mapred_local_dir'] = '/mnt/mapred/local'
+
+# Hadoop Mapred System Directory
+default['hadoop']['mapred_system_dir'] = '/mnt/mapred/system'
 
 # Hadoop Log Directory
 default['hadoop']['log_dir'] = '/mnt/log/hadoop'

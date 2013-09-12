@@ -71,10 +71,16 @@ Attributes
     <td><tt>/mnt/dfs/dn</tt></td>
   </tr>
   <tr>
-    <td><tt>['hadoop']['tasktracker_local_dir']</tt></td>
+    <td><tt>['hadoop']['mapred_local_dir']</tt></td>
     <td>String</td>
-    <td>Tasktracker's Directory</td>
-    <td><tt>/mnt/mapred/tt</tt></td>
+    <td>Mapred local directory</td>
+    <td><tt>/mnt/mapred/local</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['hadoop']['mapred_system_dir']</tt></td>
+    <td>String</td>
+    <td>Mapred system directory</td>
+    <td><tt>/mnt/mapred/system</tt></td>
   </tr>
   <tr>
     <td><tt>['hadoop']['log_dir']</tt></td>

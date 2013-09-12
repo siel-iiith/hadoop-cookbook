@@ -19,7 +19,13 @@
 
   <property>
     <name>mapred.local.dir</name>
-    <value><%= node['hadoop']['tasktracker_local_dir'] %></value>
+    <value><%= node['hadoop']['mapred_local_dir'] %></value>
+    <final>true</final>
+  </property>
+
+  <property>
+    <name>mapred.system.dir</name>
+    <value><%= node['hadoop']['mapred_system_dir'] %></value>
     <final>true</final>
   </property>
 
