@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+  
+  <property>
+    <name>dfs.name.dir</name>
+    <value><%= node['hadoop']['namenode_dir'] %></value>
+    <description>Determines where on the local filesystem the DFS name node
+      should store the name table.  If this is a comma-delimited list
+      of directories then the name table is replicated in all of the
+      directories, for redundancy. </description>
+    <final>true</final>
+  </property>
+
+  <property>
+    <name>dfs.data.dir</name>
+    <value><%= node['hadoop']['datanode_dir'] %></value>
+    <description>Determines where on the local filesystem an DFS data node
+       should store its blocks.  If this is a comma-delimited
+       list of directories, then data will be stored in all named
+       directories, typically on different devices.
+       Directories that do not exist are ignored.
+    </description>
+    <final>true</final>
+  </property>
+
+  <property>
+  <name>dfs.replication</name>
+  <value><%= node['hdfs_replication'] %></value>
+  <description></description>
+  </property>
+
+  <!--property>
+    <name>dfs.datanode.address</name>
+    <value>${HADOOP_DN_ADDR}</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.http.address</name>
+    <value>${HADOOP_DN_HTTP_ADDR}</value>
+  </property-->
+
+  <property>
+    <name>dfs.http.address</name>
+    <value><%= node['hadoop']['namenode'] %>:50070</value>
+    <description>The name of the default file system.  Either the
+       literal string "local" or a host:port for NDFS.
+    </description>
+    <final>true</final>
+  </property>
+
+</configuration>
+
