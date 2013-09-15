@@ -28,3 +28,8 @@ template "/etc/hadoop/hdfs-site.xml" do
 	action :create
 	only_if { node['hadoop']['dfs']['uri'] == 'hdfs://' }
 end
+
+include_recipe "hadoop::jobtracker" if node['hadoop']['role'] == 'jobtracker'
+include_recipe "hadoop::tasktracker" if node['hadoop']['role'] == 'tasktracker'
+include_recipe "hadoop::namenode" if node['hadoop']['role'] == 'namenode'
+include_recipe "hadoop::datanode" if node['hadoop']['role'] == 'datanode'

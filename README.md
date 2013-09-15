@@ -103,15 +103,15 @@ Create roles for appropriate services - jobtracker, tasktracker, namenode and da
 If its traditional HDFS
 
 ```
-name "tasktracker"
-description "Role to initiate tasktracker"
+name "jobtracker"
+description "Role to initiate jobtracker"
 run_list [
-    "recipe[hadoop::default]",
-    "recipe[hadoop::tasktracker]"
+    "recipe[hadoop::default]"
     ]
 default_attributes("hadoop" => {
     "jobtracker" => <jobtracker_ip>,
-    "namenode" => <namenode_ip>
+    "namenode" => <namenode_ip>,
+    "role" => "jobtracker"
 })
 ```
 
@@ -121,12 +121,12 @@ If you are using S3 as storage backend.
 name "tasktracker"
 description "Role to initiate tasktracker"
 run_list [
-    "recipe[hadoop::default]",
-    "recipe[hadoop::tasktracker]"
+    "recipe[hadoop::default]"
     ]
 default_attributes("hadoop" => {
     "jobtracker" => <jobtracker_ip>,
     "namenode" => <namenode_ip>,
+    "role" => "tasktracker"
     "dfs" => {
         "uri" => "s3://"
     }
