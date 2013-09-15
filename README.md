@@ -100,6 +100,8 @@ Usage
 -----
 Create roles for appropriate services - jobtracker, tasktracker, namenode and datanode. Update the run_list and set at least two attributes - ['hadoop']['namenode'] and ['hadoop']['jobtracker'].
 
+If its traditional HDFS
+
 ```
 name "tasktracker"
 description "Role to initiate tasktracker"
@@ -110,6 +112,27 @@ run_list [
 default_attributes("hadoop" => {
     "jobtracker" => <jobtracker_ip>,
     "namenode" => <namenode_ip>
+})
+```
+
+If you are using S3 as storage backend.
+
+```
+name "tasktracker"
+description "Role to initiate tasktracker"
+run_list [
+    "recipe[hadoop::default]",
+    "recipe[hadoop::tasktracker]"
+    ]
+default_attributes("hadoop" => {
+    "jobtracker" => <jobtracker_ip>,
+    "namenode" => <namenode_ip>,
+    "dfs" => {
+        "uri" => "s3://"
+    }
+    "s3" => {
+        "bucket" => <bucket_name>
+  }
 })
 ```
 

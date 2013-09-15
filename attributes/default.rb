@@ -28,6 +28,12 @@ default['hadoop']['jobtracker'] = ''
 # Hadoop Namenode
 default['hadoop']['namenode'] = ''
 
+# Hadoop DFS URI
+default['hadoop']['dfs']['uri'] = "hdfs://"
+
+# Hadoop S3 Bucket
+default['hadoop']['s3']['bucket'] = ''
+
 # Hadoop replication factor
 default['hdfs_replication'] = 2
 
