@@ -59,6 +59,12 @@ Attributes
     <td><tt>2</tt></td>
   </tr>
   <tr>
+    <td><tt>['hadoop']['dfs_dir']</tt></td>
+    <td>String</td>
+    <td>Parent directory of Namenode/Datanode dir</td>
+    <td><tt>/mnt/dfs</tt></td>
+  </tr>
+  <tr>
     <td><tt>['hadoop']['namenode_dir']</tt></td>
     <td>String</td>
     <td>Namenode Directory</td>
@@ -93,6 +99,12 @@ Attributes
     <td>String</td>
     <td>PID directory for Hadoop Daemons</td>
     <td><tt>/var/run/hadoop</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['hadoop']['role']</tt></td>
+    <td>String</td>
+    <td>Hadoop Role for the Instance</td>
+    <td><tt></tt></td>
   </tr>
 </table>
 
