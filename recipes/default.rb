@@ -7,7 +7,7 @@ end
 
 template "/etc/hadoop/core-site.xml" do
 	source "core-site.xml.erb"
-	variables (
+	variables(
 		:location_addr => node['hadoop']['namenode']
 		)
 	action :create
@@ -16,7 +16,7 @@ end
 
 template "/etc/hadoop/core-site.xml" do
 	source "core-site.xml.erb"
-	variables (
+	variables(
 		:location_addr => node['hadoop']['s3']['bucket']
 		)
 	action :create
