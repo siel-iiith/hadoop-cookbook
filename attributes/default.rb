@@ -37,6 +37,9 @@ default['hadoop']['s3']['bucket'] = ''
 # Hadoop replication factor
 default['hdfs_replication'] = 2
 
+# Hadoop DFS dir
+default['hadoop']['dfs_dir'] = '/mnt/dfs'
+
 # Hadoop Namenode directory
 default['hadoop']['namenode_dir'] = '/mnt/dfs/nn'
 

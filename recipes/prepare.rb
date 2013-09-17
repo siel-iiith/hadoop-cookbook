@@ -1,9 +1,8 @@
-directory node['hadoop']['namenode_dir'] do
+directory node['hadoop']['dfs_dir'] do
   owner 'hdfs'
   group 'hadoop'
   mode '0755'
   action :create
-  recursive true
   ignore_failure true
 end
 
