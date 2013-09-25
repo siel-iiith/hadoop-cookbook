@@ -1,16 +1,14 @@
 hadoop Cookbook
 ===============
 
-Installs and Configures Hadoop on Savanna Ubuntu Image.
+Installs and Configures Hadoop on Ubuntu with hadoop installed(using official .deb package).
 
 Requirements
 ------------
 
-This cookbook is part of HadoopStack. In order to skip the time required in installation of Hadoop on Instances, we decided to use an image with Hadoop pre-installed. Savanna developers have already created such an image for Ubuntu and Fedora.
+This cookbook is part of HadoopStack. In order to skip the time required in installation of Hadoop on Instances, we decided to use an image with Hadoop pre-installed. This cookbook currently supports Ubuntu with Hadoop pre-installed from official .deb package.
 
-https://savanna.readthedocs.org/en/latest/userdoc/vanilla_plugin.html
-
-This cookbook currently configures Hadoop on Savanna Ubuntu Image.
+http://archive.apache.org/dist/hadoop/core/hadoop-1.2.1/
 
 Attributes
 ----------
