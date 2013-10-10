@@ -45,5 +45,10 @@
     <value><%= node['hadoop']['group'] %></value>
   </property>
 
+  <property>
+    <name>dfs.namenode.safemode.extension</name>
+    <value><%= node['hadoop']['safemode_extension'] %></value>
+  </property>
+
 </configuration>
 

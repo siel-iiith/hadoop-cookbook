@@ -57,3 +57,6 @@ default['hadoop']['log_dir'] = '/mnt/log/hadoop'
 
 # Hadoop PID Directory
 default['hadoop']['pid_dir'] = '/var/run/hadoop'
+
+# HDFS safemode extension after threshold level is reached
+default['hadoop']['safemode_extension'] = 0
