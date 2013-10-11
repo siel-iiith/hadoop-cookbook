@@ -60,3 +60,6 @@ default['hadoop']['pid_dir'] = '/var/run/hadoop'
 
 # HDFS safemode extension after threshold level is reached
 default['hadoop']['safemode_extension'] = 0
+
+# Default number of maximum map tasks to run on a node
+default['hadoop']['map_tasks_maximum'] = 2
