@@ -1,3 +1,3 @@
-service "hadoop-datanode" do
+service "#{node['hadoop']['datanode']['service']}" do
 	action [:enable, :restart]
 end

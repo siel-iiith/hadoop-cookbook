@@ -1,18 +1,18 @@
-template "/etc/hadoop/mapred-site.xml" do
+template "#{node['hadoop']['conf_dir']}/mapred-site.xml" do
 	source "mapred-site.xml.erb"
 	action :create
 end
 
-template "/etc/hadoop/core-site.xml" do
+template "#{node['hadoop']['conf_dir']}/core-site.xml" do
 	source "core-site.xml.erb"
 	variables(
-		:location_addr => node['hadoop']['namenode']
+		:location_addr => node['hadoop']['namenode']['address']
 		)
 	action :create
 	only_if { node['hadoop']['dfs']['uri'] == "hdfs://" }
 end
 
-template "/etc/hadoop/core-site.xml" do
+template "#{node['hadoop']['conf_dir']}/core-site.xml" do
 	source "core-site.xml.erb"
 	variables(
 		:location_addr => node['hadoop']['s3']['bucket']
@@ -21,7 +21,7 @@ template "/etc/hadoop/core-site.xml" do
 	only_if { node['hadoop']['dfs']['uri'] == 's3://' }
 end
 
-template "/etc/hadoop/hdfs-site.xml" do
+template "#{node['hadoop']['conf_dir']}/hdfs-site.xml" do
 	source "hdfs-site.xml.erb"
 	action :create
 	only_if { node['hadoop']['dfs']['uri'] == 'hdfs://' }

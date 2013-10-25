@@ -2,11 +2,9 @@
 # If the namenode directory exists, it won't be formatted
 
 execute "hadoop-namenode-format" do
-	command "service hadoop-namenode format"
-	ignore_failure true
-	not_if do Dir.exist?(node['hadoop']['namenode_dir']) end
+	command "hadoop --config #{node['hadoop']['conf_dir']} namenode -format"
 end
 
-service "hadoop-namenode" do
+service "#{node['hadoop']['namenode']['service']}" do
 	action [:enable, :restart]
 end

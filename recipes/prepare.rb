@@ -6,7 +6,16 @@ directory node['hadoop']['dfs_dir'] do
   ignore_failure true
 end
 
-directory node['hadoop']['datanode_dir'] do
+directory node['hadoop']['datanode']['dir'] do
+  owner 'hdfs'
+  group 'hadoop'
+  mode '0755'
+  action :create
+  recursive true
+  ignore_failure true
+end
+
+directory node['hadoop']['namenode']['dir'] do
   owner 'hdfs'
   group 'hadoop'
   mode '0755'

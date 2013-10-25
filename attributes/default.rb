@@ -23,13 +23,22 @@ default['hadoop']['cluster_id'] = ''
 default['hadoop']['role'] = ''
 
 # Hadoop Jobtracker
-default['hadoop']['jobtracker'] = ''
+default['hadoop']['jobtracker']['address'] = ''
 
 # Hadoop Namenode
-default['hadoop']['namenode'] = ''
+default['hadoop']['namenode']['address'] = ''
+
+# Hadoop Jobtracker service name
+default['hadoop']['jobtracker']['service'] = 'hadoop-jobtracker'
+
+# Hadoop Tasktracker service name
+default['hadoop']['tasktracker']['service'] = 'hadoop-tasktracker'
+
+# Hadoop Default Configuration
+default['hadoop']['conf_dir'] = '/etc/hadoop'
 
 # Hadoop DFS URI
-default['hadoop']['dfs']['uri'] = "hdfs://"
+default['hadoop']['dfs']['uri'] = 'hdfs://'
 
 # Hadoop S3 Bucket
 default['hadoop']['s3']['bucket'] = ''
@@ -41,10 +50,16 @@ default['hdfs_replication'] = 2
 default['hadoop']['dfs_dir'] = '/mnt/dfs'
 
 # Hadoop Namenode directory
-default['hadoop']['namenode_dir'] = '/mnt/dfs/nn'
+default['hadoop']['namenode']['dir'] = '/mnt/dfs/nn'
+
+# Hadoop Namenode service name
+default['hadoop']['namenode']['service'] = 'hadoop-namenode'
 
 # Hadoop Datanode directory
-default['hadoop']['datanode_dir'] = '/mnt/dfs/dn'
+default['hadoop']['datanode']['dir'] = '/mnt/dfs/dn'
+
+# Hadoop Datanode service name
+default['hadoop']['datanode']['service'] = 'hadoop-datanode'
 
 # Hadoop Mapred Local directory
 default['hadoop']['mapred_local_dir'] = '/mnt/mapred/local'
